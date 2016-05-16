@@ -46,7 +46,7 @@ recode () {
 			echo "$MUSIC_FILE" >> "$LOG_FILE"
 			echo "$INPUT_DIR"/"$ORDER_NUM".mp3 >> "$LOG_FILE"
 
-			LD_LIBRARY_PATH="$HOME/ffmpeg_build/lib/" "$HOME"/bin/ffmpeg -i "$MUSIC_FILE" -ab 192k "$INPUT_DIR"/"$ORDER_NUM".mp3 < /dev/null > /tmp/cm_ffmpeg.log 2>&1
+			ffmpeg -i "$MUSIC_FILE" -ab 192k "$INPUT_DIR"/"$ORDER_NUM".mp3 < /dev/null > /tmp/cm_ffmpeg.log 2>&1
 			rm "$MUSIC_FILE"
 			ORDER_NUM=$(( ORDER_NUM + 1 ))
 
