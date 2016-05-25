@@ -7,10 +7,14 @@ SOURCE_FOLDER="/home/sergiy/Desktop/test-music-folder"
 MAIN_FOLDER="/tmp/music_output"
 LOG_FILE="/tmp/convert_music.log"
 
-# Install pwgen
+# Install pwgen and ffmpeg
 if [ ! -f /usr/bin/pwgen ]
 then
-	echo "Please install pwgen and run againe (apt-get install pwgen). EXIT"
+	echo "Please install pwgen (apt-get install pwgen). EXIT"
+	exit 113
+elif [ ! -f /usr/bin/ffmpeg ]
+then
+	echo "Please install ffmpeg. EXIT"
 	exit 113
 fi
 
@@ -46,7 +50,7 @@ recode () {
 			echo "$MUSIC_FILE" >> "$LOG_FILE"
 			echo "$INPUT_DIR"/"$ORDER_NUM".mp3 >> "$LOG_FILE"
 
-			ffmpeg -i "$MUSIC_FILE" -ab 192k "$INPUT_DIR"/"$ORDER_NUM".mp3 < /dev/null > /tmp/cm_ffmpeg.log 2>&1
+			/usr/bin/ffmpeg -i "$MUSIC_FILE" -ab 192k "$INPUT_DIR"/"$ORDER_NUM".mp3 < /dev/null > /tmp/cm_ffmpeg.log 2>&1
 			rm "$MUSIC_FILE"
 			ORDER_NUM=$(( ORDER_NUM + 1 ))
 
