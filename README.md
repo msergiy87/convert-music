@@ -21,7 +21,7 @@ Usage
 Just change variable in your copy of script SOURCE_FOLDER="/home/sergiy/Desktop/test-music-folder" and сheck it out that there is enough free space on your PC in /tmp folder. After that run script.
 
 Source folder with Artist folders - "/home/sergiy/Desktop/test-music-folder".
-We copy all folders to "/tmp/music_output and perform some operations".
+We copy all folders to "/tmp/music_output" and perform some operations.
 
 Also we create log files - "/tmp/convert_music.log" and "/tmp/cm_ffmpeg.log".
 
