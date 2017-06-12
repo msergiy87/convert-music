@@ -25,6 +25,6 @@ We copy all folders to "/tmp/music_output" and perform some operations.
 
 Also we create log files - "/tmp/convert_music.log" and "/tmp/cm_ffmpeg.log".
 
-- recode - first function that convert all mp3 files in every folders and change file names.
+- recode - first function that convert all mp3 files in every folder and change file names.
 
 - recursion - second function recursively change folder names.
